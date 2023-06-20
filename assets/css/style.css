@@ -638,6 +638,9 @@ video {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.shrink {
+  flex-shrink: 1;
+}
 .grow {
   flex-grow: 1;
 }
@@ -864,6 +867,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.opacity-0 {
+  opacity: 0;
+}
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -982,27 +988,32 @@ background-color: #000;
 
 /* burger menu */
 
-
-
-.pulse-animation{
-  /* background-color: aqua; */
-  animation: pulse 1s ease-in-out infinite alternate;
-}
-.pulse-animation:hover{
-  animation-play-state: paused;
-}
 .bouncing-animation{
   animation: bounce 1s ease-in-out infinite alternate;
 }
 
 @keyframes bounce {
-  from {translate: 0 0;}
-  to { translate: 0 -1rem;}
+  from {
+    translate: 0 0;
+  }
+  to { 
+    translate: 0 -1rem;
+  }
+}
+
+/* hover pulse */
+
+.pulse-animation{
+  animation: pulse 1s ease-in-out infinite alternate;
 }
 
 @keyframes pulse {
-  from {scale:1;}
-  to { scale: 1.2}
+  from {
+    scale: 1.1;
+  }
+  to { 
+    scale: 0.95;
+  }
 }
 
 @media (min-width: 640px) {
@@ -1060,3 +1071,4 @@ background-color: #000;
 .\[\&\>\:nth-child\(2n\)\]\:aspect-\[2\/3\]>:nth-child(2n) {
   aspect-ratio: 2/3;
 }
+
