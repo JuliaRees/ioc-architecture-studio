@@ -145,6 +145,10 @@ background-color: #000;
   animation: pulse 1s ease-in-out infinite alternate;
 }
 
+.pulse-animation:hover{
+  animation-play-state: paused;
+}
+
 @keyframes pulse {
   from {
     scale: 1.1;

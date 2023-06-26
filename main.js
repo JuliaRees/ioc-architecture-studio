@@ -35,7 +35,8 @@ function toggleBurgerMenu() {
 }
 
 // finally link it to the click action of the burger button
-burgerButton.addEventListener('click', toggleBurgerMenu)
+burgerButton?.addEventListener('click', toggleBurgerMenu)
+
 
 
 
@@ -87,6 +88,36 @@ function toggleSubPoints() {
 }
 
 // finally link it to the click action of the burger button
-object.addEventListener('click', toggleSubPoints)
+object.addEventListener('mouseenter', toggleSubPoints)
+object.addEventListener('mouseleave', toggleSubPoints)
 
+})
+
+
+
+
+
+
+
+
+// ------------------ gallery --------------------------------
+
+let animatedImages = document.querySelectorAll('.gallery-scroll')
+
+animatedImages.forEach(img => {
+  let tl = gsap.timeline({
+    // duration: "2",
+    scrollTrigger: {
+        trigger: img,
+        start: "top bottom",
+        end: "bottom top",
+        toggleActions: "play none none none",
+        scrub: true,
+        markers: true,
+    },
+    marker: true
+  })
+  .to(img, {scale: '1',})
+  .to(img, {scale: '1',})
+  .to(img, {scale: '.5',})
 })
